@@ -1,0 +1,50 @@
+@import "tailwindcss/base";
+@import "tailwindcss/components";
+@import "tailwindcss/utilities";
+
+html {
+  --bg-color: #323343;
+  --card-bg-color: #393A51;
+  --card-border-color: #494B70;
+  --btn-color: #8489E0;
+  --btn-color-hover: #C8CBF8;
+}
+
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background-color: var(--bg-color);
+}
+
+@layer utilities {
+  [class*='flex-'] {
+    display: flex;
+  }
+
+  button {
+    padding: 0.5rem;
+    background-color: var(--btn-color);
+    border: 2px solid var(--btn-color); 
+    border-radius: 7px;
+    transition: all .3s ease;
+  }
+
+  button:hover {
+    border: 2px solid var(--btn-color-hover); 
+  }
+
+  .stats {
+    padding: 0.75rem;
+    background-color: var(--card-bg-color);
+    border: 2px solid var(--card-border-color); 
+    border-radius: 7px;
+  }
+}
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
