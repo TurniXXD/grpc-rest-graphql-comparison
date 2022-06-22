@@ -1,0 +1,1 @@
+module github.com/turnixxd/grpc-rest-graphql-comparison
