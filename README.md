@@ -10,11 +10,28 @@
 
 ## BE
 
-- PostgreSQL
-- Go
+- Go (`:5000`)
   - GraphQL
   - REST
   - gRPC
+- Node (`:5001`)
+- Python (`:5002`)
+
+## DB
+
+- Redis
+
+### Dev
+
+- follow setup `/database/dev/redis-setup.md`
+- 3 separate docker containers for redis master and replicas and 3 containers for sentinels
+
+### Prod
+
+- follow setup `/database/prod/redis-setup.md`
+- kind-k8s cluster
+  - 3 pods => master and two replicas
+  - 3 sentinels => if master dies sentinel will promote one of the replicas to master
 
 ## Presentation
 
@@ -200,8 +217,11 @@ Při hledání odpovědi jsem došel k názoru že opravdu záleží na daném u
 
 #### HTTP 3.0
 
+- Změna na multiplexovaný transfer dat pomocí QUIC přes protokol UDP
+
 ### Slide gRPC
 
+- Každý komunikační protokol potřebuje client library, což je problém pro aplikace mimo prohlížeč kde při každé nové verzi nebo featuře musíme manuálně přidávat nové verze
 <div style="text-align: center;">
   <img alt="TCP connection comparison" src="img/tcp-connection-comparison.png">
 </div>
